@@ -8,7 +8,6 @@ body {
 
 .input-todo-area {
   height: 40px;
-  display: flex;
 }
 
 .input-todo-area .input-todo {
@@ -16,20 +15,17 @@ body {
   height: 34px;
   display: inline-block;
 }
+
 .input-todo-area .input-btn {
   background: #76ff03;
   color: #fff;
-}
-.input-todo-area .input-btn:active {
-  border: none;
-  -webkit-transform: translate(3px, 3px);
-  transform: translate(3px, 3px);
 }
 
 .stock-todo-area {
   border: solid 1px #000;
   margin-top: 10px;
 }
+
 .stock-todo-area .todo-list_contents {
   border-bottom: solid 1px #ddd;
   padding: 10px;
@@ -37,7 +33,6 @@ body {
 }
 .stock-todo-area .todo-list_contents .todo-list_text {
   width: 70%;
-  word-break: break-all;
 }
 .stock-todo-area .todo-list_contents .todo-list_text .label {
   width: 100%;
