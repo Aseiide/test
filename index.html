@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TODO App</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+  <main>
+    <h1 class="main-title">TODOリスト</h1>
+    <div id="app">
+      <div class="input-todo-area">
+        <input type="text" v-model="inputAdd" placeholder="edit me" class="input-todo" />
+        <button @click="addItem" class="input-btn">追加</button>
+      </div>
+      <div class="stock-todo-area">
+        <div v-for="(todo, index) in todos" :key="todo" class="todo-list_contents">
+          <div class="todo-list_text">
+            <label class="label" v-if="!todo.isEditMode">
+              <input type="checkbox" @click="saveCheckState(index);" v-model="todo.isCheck" class="checkbox" hidden />
+              <span class="todo-list_item">{{todo.item}}</span>
+            </label>
+            <input type="text" v-if="todo.isEditMode" class="input-todo-edit" :id="'editTextArea'+index" />
+          </div>
+          <div class="todo-list_btn">
+            <div class="btn-left">
+              <button @click="deleteItem(index);" class="btn delete" v-if="!todo.isEditMode">削除</button>
+              <button @click="editItem(index, 'cancel');" v-if="todo.isEditMode" class="btn cancel">中止</button>
+            </div>
+            <div class="btn-right">
+              <button v-if="!todo.isEditMode" @click="editItem(index);" class="btn">編集</button>
+              <button v-if="todo.isEditMode" @click="editItem(index);" class="btn">確定</button>
+            </div>
+            </button>
+          </div>
+        </div>
+      </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
