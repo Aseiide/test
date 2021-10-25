@@ -33,6 +33,6 @@ body {
   list-style: none;
 }
 
-#app li > span.done {
+#app span.done {
   text-decoration: line-through;
 }

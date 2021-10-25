@@ -31,3 +31,10 @@ new Vue ({
     }
   }
 })
+Vue.component('todo-item', {
+  data: function () {
+    return {}
+  },
+  props: ['todo', 'index', 'deleteItem'],
+  template: '#todo-item'
+})
