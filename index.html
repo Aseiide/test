@@ -37,7 +37,7 @@
               <td><input type="checkbox" @click="todo.done = !todo.done"></td>
             </div>
             <td>
-              <div :class="{'complete': todo.done, editing: todo == editedTodo}">
+              <div :class="{complete: todo.done, editing: todo == editedTodo}">
                 <span class="view" @dblclick="editTodo(todo)">{{ todo.body }}</span>
                 <input class="edit" type="text" v-model="todo.body" v-todo-focus="todo == editedTodo"
                   @blur="doneEdit(todo)" @keypress.enter="doneEdit(todo)" @keyup.esc="cancelEdit(todo)">
