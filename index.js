@@ -41,7 +41,6 @@ new Vue({
       if (!this.editedTodo) {
         return
       }
-      this.editedTodo = null
       todo.body = todo.body.trim()
       if (!todo.body) {
         this.deleteTodo(todo)
@@ -49,7 +48,7 @@ new Vue({
     },
     cancelEdit: function (todo) {
       this.editedTodo = null
-      todo.body = this.beforeEditCache
+      todo.body = null
     },
     deleteTodo: function (todo) {
       const index = this.todos.indexOf(todo)
