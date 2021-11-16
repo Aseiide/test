@@ -43,7 +43,7 @@ new Vue({
       }
       todo.body = todo.body.trim()
       if (!todo.body) {
-        this.deleteTodo(todo)
+        return null
       }
     },
     cancelEdit: function (todo) {
