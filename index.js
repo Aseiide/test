@@ -18,7 +18,7 @@ new Vue({
   el: '#app',
   data: {
     newBody: '',
-    editedTodo: null,
+    editedTodoId: null,
     todos: todoStorage.fetch()
   },
   methods: {
@@ -35,20 +35,20 @@ new Vue({
     },
     editTodo: function (todo) {
       this.beforeEditCache = todo.body
-      this.editedTodo = todo
+      this.editedTodoId = todo
     },
     doneEdit: function (todo) {
-      if (!this.editedTodo) {
+      if (!this.editedTodoId) {
         return
       }
       todo.body = todo.body.trim()
       if (!todo.body) {
         return null
       }
-      this.editedTodo = null
+      this.editedTodoId = null
     },
     cancelEdit: function (todo) {
-      this.editedTodo = null
+      this.editedTodoId = null
       todo.body = null
     },
     deleteTodo: function (todo) {
