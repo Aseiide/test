@@ -45,6 +45,7 @@ new Vue({
       if (!todo.body) {
         return null
       }
+      this.editedTodo = null
     },
     cancelEdit: function (todo) {
       this.editedTodo = null
