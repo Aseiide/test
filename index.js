@@ -34,7 +34,6 @@ new Vue({
       this.newBody = ''
     },
     editTodo: function (todo) {
-      this.beforeEditCache = todo.body
       this.editedTodoId = todo
     },
     doneEdit: function (todo) {
